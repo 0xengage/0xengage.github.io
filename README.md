@@ -1,4 +1,4 @@
-# 0xengage API
+
 
 ```
 // Initialize mailbox for `receiver` address
