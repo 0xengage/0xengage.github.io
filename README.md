@@ -40,4 +40,4 @@ await mailbox.pop();
 ```
 
 ### Contact
-Join the community on the [0xEngage channel](https://t.me/+3AfFvzKT5QswYWZh) on Telegram for questions or feedback.
+Join the community on the [0xEngage group](https://t.me/+tY-bKbPLixw1MmI5) on Telegram for questions or feedback.
