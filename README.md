@@ -10,7 +10,7 @@ Protocol details are coming soon.
 
 
 ```bash
-npm install -g 0xengage-client
+npm install -g @0xengage/client
 ```
 
 ### Quickstart
@@ -18,7 +18,7 @@ npm install -g 0xengage-client
 
 ```typescript
 
-import { Mailbox } from '0xengage-client';
+import { Mailbox } from '@0xengage/client';
 
 ..
 ..
