@@ -11,7 +11,7 @@ More protocol details are coming soon.
 
 
 ```bash
-npm install -g @0xengage/client
+npm install @0xengage/client
 ```
 
 ### Quickstart
