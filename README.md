@@ -38,3 +38,6 @@ const messages = await mailbox.fetch();
 await mailbox.pop();
 await mailbox.pop();
 ```
+
+### Contact
+Join the community on the [0xEngage channel](https://t.me/+3AfFvzKT5QswYWZh) on Telegram for questions or feedback.
