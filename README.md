@@ -37,8 +37,8 @@ const messages = await mailbox.fetch();
 
 // Receiver can close message accounts and retrieve rent.
 const mailbox2 = new Mailbox(conn, { receiver, payer, });
-await mailbox.pop();
-await mailbox.pop();
+await mailbox2.pop();
+await mailbox2.pop();
 ```
 
 ### Transaction API
