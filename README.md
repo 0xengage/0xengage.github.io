@@ -20,12 +20,8 @@ npm install @0xengage/client
 ```typescript
 import { Mailbox } from '@0xengage/client';
 
-// Initialize mailbox for `receiver` address. Here `payer` must be
-// a `Keypair` and `receiver` may be a `PublicKey` or `Keypair`.
-// If `receiver` is a `PublicKey` the client may send and fetch
-// messages, but may not call `pop` (as `pop` requires receivers's
-// signature).
-const mailbox = new Mailbox(conn, { receiver, payer, });
+// Initialize mailbox for a receiver and start sending messages.
+const mailbox = new Mailbox(conn, { receiverAddress, payer, });
 
 // Send messages
 await mailbox.send("text0");
@@ -39,8 +35,8 @@ await mailbox.send("text1");
 // ]
 const messages = await mailbox.fetch();
 
-// If `receiver` is a Keypair, can call `pop` to close
-// message accounts and retrieve rent (rent goes to receiver)
+// Receiver can close message accounts and retrieve rent.
+const mailbox2 = new Mailbox(conn, { receiver, payer, });
 await mailbox.pop();
 await mailbox.pop();
 ```
@@ -55,9 +51,8 @@ but submit transactions to the network yourself, you can use the client as follo
 ```typescript
 import { Mailbox } from '@0xengage/client';
 
-// Initialize mailbox for `receiver` address. Here `payer`
-// and `receiver` must be of type `PublicKey`.
-const mailbox = new Mailbox(conn, { receiver, payer, });
+// Initialize mailbox for receiver
+const mailbox = new Mailbox(conn, { receiverAddress, payerAddress, });
 
 // Construct transactions to send messages. You may then submit
 // `sendTx0` and `sendTx1` to the network. When submitting note
@@ -74,7 +69,7 @@ const sendTx1 = await mailbox.makeSendTx("text1");
 const messages = await mailbox.fetch();
 
 // You can construct transactions to pop messages as follows. Note
-// that `receiver` must sign the transaction in order for it to
+// that receiver must sign the transaction in order for it to
 // succeed.
 const popTx0 = await mailbox.makePopTx();
 const popTx1 = await mailbox.makePopTx();
