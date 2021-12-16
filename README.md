@@ -35,10 +35,17 @@ await mailbox.send("text1");
 // ]
 const messages = await mailbox.fetch();
 
+// Get number of messages in a mailbox
+// This returns: 2
+const messageCount1 = await mailbox.count();
+
 // Receiver can close message accounts and retrieve rent.
 const mailbox2 = new Mailbox(conn, { receiver, payer, });
 await mailbox2.pop();
 await mailbox2.pop();
+
+// This returns: 0
+const messageCount2 = await mailbox.count();
 ```
 
 ### Transaction API
